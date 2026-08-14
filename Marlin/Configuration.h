@@ -1363,7 +1363,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.08, 80.24, 400, 145 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.16, 80.16, 400, 145 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
@@ -2494,13 +2494,13 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 120.24
-  #define XY_DIAG_BD 119.84
-  #define XY_SIDE_AD 85
+  #define XY_DIAG_AC 120.63
+  #define XY_DIAG_BD 120.12
+  #define XY_SIDE_AD 85.03
 
   // Or, set the XY skew factor directly:
   //#define XY_SKEW_FACTOR 0.0
