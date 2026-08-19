@@ -313,11 +313,11 @@
   #define THERMAL_PROTECTION_PERIOD        40 // (seconds)
   #define THERMAL_PROTECTION_HYSTERESIS     4 // (°C)
 
-  //#define ADAPTIVE_FAN_SLOWING              // Slow down the part-cooling fan if the temperature drops
+  #define ADAPTIVE_FAN_SLOWING              // Slow down the part-cooling fan if the temperature drops
   #if ENABLED(ADAPTIVE_FAN_SLOWING)
     //#define REPORT_ADAPTIVE_FAN_SLOWING     // Report fan slowing activity to the console
     #if ANY(MPCTEMP, PIDTEMP)
-      //#define TEMP_TUNING_MAINTAIN_FAN      // Don't slow down the fan speed during M303 or M306 T
+      #define TEMP_TUNING_MAINTAIN_FAN      // Don't slow down the fan speed during M303 or M306 T
     #endif
   #endif
 
@@ -454,7 +454,7 @@
    * 5. Enable PID_FAN_SCALING_ALTERNATIVE_DEFINITION and enter the two identified Kf-values in
    *    PID_FAN_SCALING_AT_FULL_SPEED and PID_FAN_SCALING_AT_MIN_SPEED. Enter the minimum speed in PID_FAN_SCALING_MIN_SPEED
    */
-  //#define PID_FAN_SCALING
+  #define PID_FAN_SCALING
   #if ENABLED(PID_FAN_SCALING)
     //#define PID_FAN_SCALING_ALTERNATIVE_DEFINITION
     #if ENABLED(PID_FAN_SCALING_ALTERNATIVE_DEFINITION)
@@ -502,7 +502,7 @@
   #define AUTOTEMP_MAX        250
   #define AUTOTEMP_FACTOR       0.1f
   // Turn on AUTOTEMP on M104/M109 by default using proportions set here
-  //#define AUTOTEMP_PROPORTIONAL
+  #define AUTOTEMP_PROPORTIONAL
   #if ENABLED(AUTOTEMP_PROPORTIONAL)
     #define AUTOTEMP_MIN_P      0     // (°C) Added to the target temperature
     #define AUTOTEMP_MAX_P      5     // (°C) Added to the target temperature
@@ -588,8 +588,8 @@
  * Allows remapping which physical fan pin is used for part cooling.
  * By default: FAN0 -> FAN0_PIN, FAN1 -> FAN1_PIN, etc.
  */
-//#define PART_COOLING_FAN0_PIN   FAN0_PIN
-//#define PART_COOLING_FAN1_PIN   FAN1_PIN
+#define PART_COOLING_FAN0_PIN   FAN1_PIN
+#define PART_COOLING_FAN1_PIN   -1
 //#define PART_COOLING_FAN2_PIN   FAN2_PIN
 //#define PART_COOLING_FAN3_PIN   FAN3_PIN
 //#define PART_COOLING_FAN4_PIN   FAN4_PIN
@@ -720,7 +720,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN FAN1_PIN
+#define E0_AUTO_FAN_PIN FAN0_PIN
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
@@ -2494,7 +2494,7 @@
   //#define LA_DEBUG              // Print debug information to serial during operation. Disable for production use.
   //#define EXPERIMENTAL_I2S_LA   // Allow I2S_STEPPER_STREAM to be used with LA. Performance degrades as the LA step rate reaches ~20kHz.
 
-  //#define SMOOTH_LIN_ADVANCE    // Remove limits on acceleration by gradual increase of nozzle pressure
+  #define SMOOTH_LIN_ADVANCE    // Remove limits on acceleration by gradual increase of nozzle pressure
   #if ENABLED(SMOOTH_LIN_ADVANCE)
     /**
      * ADVANCE_TAU is also the time ahead that the smoother needs to look
@@ -3226,7 +3226,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Z)
-    #define Z_CURRENT       580
+    #define Z_CURRENT       1000
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -3326,7 +3326,7 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(E0)
-    #define E0_CURRENT      650
+    #define E0_CURRENT      580
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
