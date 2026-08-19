@@ -588,8 +588,8 @@
  * Allows remapping which physical fan pin is used for part cooling.
  * By default: FAN0 -> FAN0_PIN, FAN1 -> FAN1_PIN, etc.
  */
-//#define PART_COOLING_FAN0_PIN   FAN0_PIN
-//#define PART_COOLING_FAN1_PIN   FAN1_PIN
+//#define PART_COOLING_FAN0_PIN   FAN1_PIN
+//#define PART_COOLING_FAN1_PIN   FAN0_PIN
 //#define PART_COOLING_FAN2_PIN   FAN2_PIN
 //#define PART_COOLING_FAN3_PIN   FAN3_PIN
 //#define PART_COOLING_FAN4_PIN   FAN4_PIN
@@ -720,7 +720,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN FAN0_PIN
+#define E0_AUTO_FAN_PIN FAN1_PIN
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
@@ -2574,8 +2574,8 @@
 #if PROBE_SELECTED && !IS_KINEMATIC
   //#define PROBING_MARGIN_LEFT PROBING_MARGIN
   //#define PROBING_MARGIN_RIGHT PROBING_MARGIN
-  //#define PROBING_MARGIN_FRONT PROBING_MARGIN
-  //#define PROBING_MARGIN_BACK PROBING_MARGIN
+  #define PROBING_MARGIN_FRONT PROBING_MARGIN
+  #define PROBING_MARGIN_BACK 25
 #endif
 
 #if ANY(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
