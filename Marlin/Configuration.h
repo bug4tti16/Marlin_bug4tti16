@@ -735,9 +735,9 @@
     #define DEFAULT_KI_LIST {   1.54,   1.54 }
     #define DEFAULT_KD_LIST {  76.55,  76.55 }
   #else
-    #define DEFAULT_KP  21.73
-    #define DEFAULT_KI   1.54
-    #define DEFAULT_KD  76.55
+    #define DEFAULT_KP  23.5
+    #define DEFAULT_KI   1.75
+    #define DEFAULT_KD  78.9
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -833,9 +833,9 @@
                               // Get the power from the temperature report ('M105' => B@:nnn) and try P*2-20 to P*2-10.
   //#define PID_BED_DEBUG     // Print Bed PID debug data to the serial port. Use 'M303 D' to enable/disable.
 
-  #define DEFAULT_BED_KP  50.71
-  #define DEFAULT_BED_KI   9.88
-  #define DEFAULT_BED_KD 173.43
+  #define DEFAULT_BED_KP  180.5
+  #define DEFAULT_BED_KI   34.71
+  #define DEFAULT_BED_KD 625.6
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
@@ -1360,7 +1360,7 @@
  * Override with M92 (when enabled below)
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 79.817, 79.733, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.125, 80.07, 400, 100 }
 
 /**
  * Enable support for M92. Disable to save at least ~530 bytes of flash.
